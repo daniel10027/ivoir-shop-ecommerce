@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addCart } from "../redux/action";
 
@@ -10,9 +10,10 @@ import toast from "react-hot-toast";
 
 const Products = () => {
   const [data, setData] = useState([]);
-  const [filter, setFilter] = useState(data);
+  const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
+
+  const componentMounted = useRef(true); // 👈 Utilisation de useRef
 
   const dispatch = useDispatch();
 
@@ -23,19 +24,25 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
-      const response = await fetch("https://fakestoreapi.com/products/");
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+      try {
+        const response = await fetch("https://fakestoreapi.com/products/");
+        const jsonData = await response.json();
+        if (componentMounted.current) {
+          setData(jsonData);
+          setFilter(jsonData);
+          setLoading(false);
+        }
+      } catch (error) {
+        console.error("Erreur lors du chargement des produits:", error);
         setLoading(false);
       }
-
-      return () => {
-        componentMounted = false;
-      };
     };
 
     getProducts();
+
+    return () => {
+      componentMounted.current = false;
+    };
   }, []);
 
   const Loading = () => {
@@ -118,7 +125,7 @@ const Products = () => {
                 <img
                   className="card-img-top p-3"
                   src={product.image}
-                  alt="Card"
+                  alt={product.title}
                   height={300}
                 />
                 <div className="card-body">
@@ -131,8 +138,6 @@ const Products = () => {
                 </div>
                 <ul className="list-group list-group-flush">
                   <li className="list-group-item lead">$ {product.price}</li>
-                  {/* <li className="list-group-item">Dapibus ac facilisis in</li>
-                    <li className="list-group-item">Vestibulum at eros</li> */}
                 </ul>
                 <div className="card-body">
                   <Link
@@ -158,6 +163,7 @@ const Products = () => {
       </>
     );
   };
+
   return (
     <>
       <div className="container my-3 py-3">
