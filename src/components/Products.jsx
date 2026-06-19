@@ -13,8 +13,7 @@ const Products = () => {
   const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const componentMounted = useRef(true); // 👈 Utilisation de useRef
-
+  const componentMounted = useRef(true);
   const dispatch = useDispatch();
 
   const addProduct = (product) => {

@@ -12,12 +12,20 @@
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "env": {
-    "REACT_APP_APP_NAME": "E-Commerce Côte d'Ivoire",
-    "REACT_APP_API_URL": "https://fakestoreapi.com/products"
-  }
+  ]
 }
