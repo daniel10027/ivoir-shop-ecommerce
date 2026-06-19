@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-ivorian",
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_APP_NAME": "E-Commerce Côte d'Ivoire",
+    "REACT_APP_API_URL": "https://fakestoreapi.com/products"
+  }
+}
