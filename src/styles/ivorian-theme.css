@@ -1,0 +1,579 @@
+/* ============================================
+   THEME CÔTE D'IVOIRE - E-COMMERCE
+   Couleurs : Orange (#FF7F00), Blanc (#FFFFFF), Vert (#009E60)
+   ============================================ */
+
+/* === IMPORT DES POLICES === */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@400;700&display=swap");
+
+/* === VARIABLES === */
+:root {
+  /* Couleurs principales */
+  --ivorian-orange: #ff7f00;
+  --ivorian-orange-dark: #e06a00;
+  --ivorian-orange-light: #ffa54f;
+  --ivorian-white: #ffffff;
+  --ivorian-green: #009e60;
+  --ivorian-green-dark: #007a4a;
+  --ivorian-green-light: #33b87a;
+
+  /* Ombres */
+  --shadow-orange: 0 4px 15px rgba(255, 127, 0, 0.3);
+  --shadow-green: 0 4px 15px rgba(0, 158, 96, 0.3);
+
+  /* Polices */
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Playfair Display", serif;
+}
+
+/* === STYLE GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: #fffdf7;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+/* === NAVBAR === */
+.navbar {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange) 0%,
+    var(--ivorian-orange-dark) 100%
+  ) !important;
+  box-shadow: var(--shadow-orange);
+  padding: 1rem 0 !important;
+  border-bottom: 4px solid var(--ivorian-green);
+}
+
+.navbar-brand {
+  color: var(--ivorian-white) !important;
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  font-size: 1.8rem !important;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover {
+  color: #fffde7 !important;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  color: var(--ivorian-white) !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 0.5rem 1.2rem !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fffde7 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background-color: var(--ivorian-white) !important;
+  color: var(--ivorian-orange) !important;
+  font-weight: 700;
+}
+
+.navbar .btn-outline-dark {
+  color: var(--ivorian-white) !important;
+  border-color: var(--ivorian-white) !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn-outline-dark:hover {
+  background-color: var(--ivorian-white) !important;
+  color: var(--ivorian-orange) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .btn-outline-dark i {
+  margin-right: 5px;
+}
+
+/* === HERO SECTION === */
+.hero .card {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  border: 3px solid var(--ivorian-orange);
+}
+
+.hero .card-img {
+  filter: brightness(0.7);
+  transition: all 0.5s ease;
+}
+
+.hero .card:hover .card-img {
+  filter: brightness(0.9);
+  transform: scale(1.02);
+  transition: all 0.5s ease;
+}
+
+.hero .card-title {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--ivorian-white);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 2px;
+}
+
+.hero .card-text {
+  color: #fffde7;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
+}
+
+/* === BOUTONS === */
+.btn-orange {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  );
+  color: var(--ivorian-white);
+  border: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-orange);
+}
+
+.btn-orange:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 127, 0, 0.4);
+  color: var(--ivorian-white);
+}
+
+.btn-green {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-green),
+    var(--ivorian-green-dark)
+  );
+  color: var(--ivorian-white);
+  border: none;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-green);
+}
+
+.btn-green:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 158, 96, 0.4);
+  color: var(--ivorian-white);
+}
+
+.btn-outline-ivorian {
+  border: 2px solid var(--ivorian-orange);
+  color: var(--ivorian-orange);
+  background: transparent;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-ivorian:hover {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  );
+  color: var(--ivorian-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+/* === CARTES PRODUITS === */
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: var(--ivorian-white);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--ivorian-orange);
+  box-shadow: 0 12px 35px rgba(255, 127, 0, 0.2);
+}
+
+.card .card-img-top {
+  transition: all 0.4s ease;
+  padding: 20px !important;
+  background: #fffdf7;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card .card-title {
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.card .list-group-item {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  color: var(--ivorian-orange);
+  font-size: 1.3rem;
+  border: none;
+  background: transparent;
+}
+
+.card .btn-dark {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  ) !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 8px 20px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.card .btn-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.card .btn-dark.m-1:last-child {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-green),
+    var(--ivorian-green-dark)
+  ) !important;
+}
+
+.card .btn-dark.m-1:last-child:hover {
+  box-shadow: var(--shadow-green);
+}
+
+/* === FILTRES === */
+.buttons .btn-outline-dark {
+  border-color: var(--ivorian-orange) !important;
+  color: var(--ivorian-orange) !important;
+  border-radius: 50px !important;
+  padding: 8px 25px !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.buttons .btn-outline-dark:hover {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  ) !important;
+  color: var(--ivorian-white) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-orange);
+}
+
+.buttons .btn-outline-dark:first-child {
+  border-color: var(--ivorian-green) !important;
+  color: var(--ivorian-green) !important;
+}
+
+.buttons .btn-outline-dark:first-child:hover {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-green),
+    var(--ivorian-green-dark)
+  ) !important;
+  color: var(--ivorian-white) !important;
+  box-shadow: var(--shadow-green);
+}
+
+/* === TITRES === */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-secondary);
+}
+
+h1.display-5,
+h2.text-center {
+  color: #1a1a1a;
+  position: relative;
+  display: inline-block;
+}
+
+h1.display-5:after,
+h2.text-center:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--ivorian-orange),
+    var(--ivorian-green)
+  );
+  border-radius: 2px;
+}
+
+h1.display-5,
+h2.text-center {
+  padding-bottom: 15px;
+}
+
+/* === FOOTER === */
+footer {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange) 0%,
+    var(--ivorian-orange-dark) 100%
+  );
+  color: var(--ivorian-white);
+  padding: 2rem 0 1rem 0;
+  margin-top: 3rem;
+  border-top: 4px solid var(--ivorian-green);
+}
+
+footer a {
+  color: var(--ivorian-white) !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #fffde7 !important;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+footer .fa-github {
+  color: var(--ivorian-white);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+footer .fa-github:hover {
+  color: #fffde7;
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* === FORMULAIRES === */
+.form-control {
+  border-radius: 10px;
+  border: 2px solid #e8e8e8;
+  padding: 12px 18px;
+  font-family: var(--font-primary);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--ivorian-orange);
+  box-shadow: 0 0 0 0.2rem rgba(255, 127, 0, 0.25);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* === CART & CHECKOUT === */
+.list-group-item {
+  font-family: var(--font-primary);
+}
+
+.list-group-item strong {
+  color: var(--ivorian-orange);
+}
+
+.card-header {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  ) !important;
+  color: var(--ivorian-white) !important;
+  border: none !important;
+  font-weight: 700;
+}
+
+.card-header h5,
+.card-header h4 {
+  color: var(--ivorian-white);
+  font-family: var(--font-secondary);
+}
+
+/* === SCROLL TO TOP === */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  );
+  color: var(--ivorian-white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-orange);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: none;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(255, 127, 0, 0.5);
+}
+
+/* === TOAST NOTIFICATIONS === */
+.Toastify__toast {
+  font-family: var(--font-primary) !important;
+  border-radius: 12px !important;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-green),
+    var(--ivorian-green-dark)
+  ) !important;
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #dc3545, #b02a37) !important;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.4rem !important;
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 0.8rem !important;
+  }
+
+  .hero .card-title {
+    font-size: 1.8rem !important;
+  }
+
+  .card .card-img-top {
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero .card-title {
+    font-size: 1.4rem !important;
+  }
+
+  .buttons .btn-outline-dark {
+    padding: 6px 15px !important;
+    font-size: 0.85rem;
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.6s ease;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* === BANDEAU IVOIRIEN === */
+.ivorian-flag-bar {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--ivorian-orange) 0%,
+    var(--ivorian-orange) 33.33%,
+    var(--ivorian-white) 33.33%,
+    var(--ivorian-white) 66.66%,
+    var(--ivorian-green) 66.66%,
+    var(--ivorian-green) 100%
+  );
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+/* === BADGES === */
+.badge-ivorian {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-orange),
+    var(--ivorian-orange-dark)
+  );
+  color: var(--ivorian-white);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.badge-green {
+  background: linear-gradient(
+    135deg,
+    var(--ivorian-green),
+    var(--ivorian-green-dark)
+  );
+  color: var(--ivorian-white);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+}
